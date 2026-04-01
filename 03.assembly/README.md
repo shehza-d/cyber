@@ -6,4 +6,6 @@
 
 ## Resources
 
-    - [syscall table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+- [Code Repo by Dr. Nauman](https://github.com/recluze/assembly-lang-course)
+    - [Syscall table](https://blog.rchapman.org/posts/Linux_System_Call_Table_for_x86_64/)
+    - [Intel® 64 and IA-32 Architectures Software Developer’s Manual](https://cdrdv2.intel.com/v1/dl/getContent/671200)
