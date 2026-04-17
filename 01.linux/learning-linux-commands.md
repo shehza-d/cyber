@@ -120,3 +120,10 @@ nohup <any command> &
 ```
 
 keep any command running in the background even if the ssh connection drops from server
+
+### other
+
+```zsh
+zmv '(*).txt' '$1.js'
+```
+renames all txt file to extension .js ($1 is variable)
