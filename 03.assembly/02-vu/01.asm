@@ -1,3 +1,4 @@
+; this is a comment
 [org 0x0100]
 
 mov  ax, 5

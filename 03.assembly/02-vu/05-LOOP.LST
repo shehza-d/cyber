@@ -1,0 +1,23 @@
+     1                                  ; loop
+     2                                  
+     3                                  [org 0x0100]
+     4                                  
+     5 00000000 B80000                  	mov ax, 0		  ; reset the accumulator
+     6 00000003 BB[1D00]                	mov bx, num1	  ; set the base
+     7 00000006 B90500                  	mov cx, 5		  ; set the iterator count 
+     8                                  
+     9                                  	outerloop:
+    10 00000009 0307                    		add ax, [bx]  ; add number pointed by bx to ax
+    11 0000000B 81C30200                		add bx, 2	  ; increment bx pointer (if this product 0 it doesn't matter)
+    12 0000000F 81E90100                		sub cx, 1 	  ; decrement (if this product 0, then it will effect jnz)
+    13 00000013 75F4                    		jnz outerloop ; condition
+    14                                  	
+    15 00000015 A3[2B00]                	mov [result], ax
+    16                                  
+    17 00000018 B8004C                  	mov ax, 0x4c00
+    18 0000001B CD21                    	int 0x21
+    19                                  
+    20                                  
+    21 0000001D 05000A000F00050005-     num1: dw 5, 10, 15, 5, 5, 5, 5
+    22 00000026 0005000500         
+    23 0000002B 0000                    result: dw 0

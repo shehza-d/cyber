@@ -1,0 +1,19 @@
+     1                                  ; a program to add 5, 10, and 15 using indirect addressing
+     2                                  [org 0x100]
+     3                                  
+     4 00000000 BB[1C00]                    mov bx, num1    ; puts the address of num1 in bx (not the content)
+     5 00000003 8B07                        mov ax, [bx]    ; move 5 into bx
+     6                                                      ; move into ax the content of the memory location bx
+     7 00000005 81C30200                    add bx, 2       ; 
+     8 00000009 0307                        add ax, [bx]       ; 
+     9 0000000B 81C30200                    add bx, 2       ; 
+    10 0000000F 0307                        add ax, [bx]       ; 
+    11 00000011 81C30200                    add bx, 2       ; 
+    12 00000015 8907                        mov [bx], ax
+    13                                  
+    14 00000017 B8004C                      mov ax, 0x4c00
+    15 0000001A CD21                        int 0x21
+    16                                  
+    17                                  
+    18                                  
+    19 0000001C 05000A000F000000        num1: dw 5, 10, 15, 0

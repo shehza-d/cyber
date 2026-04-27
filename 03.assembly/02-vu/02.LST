@@ -1,0 +1,19 @@
+     1                                  ; a program to add 3 numbers using memory variables
+     2                                  [org 0x0100]
+     3                                  
+     4 00000000 A1[1700]                	mov ax, [num1]		; load first number in ax register
+     5 00000003 8B1E[1900]              	mov bx, [num2]      ; move second number in bx register
+     6 00000007 01D8                    	add ax, bx          ; add bx into ax (i.e ax = 15)
+     7 00000009 8B1E[1B00]              	mov bx, [num3]		; move num3(15) into bx
+     8 0000000D 01D8                    	add ax, bx          ; add num3 from bx into ax (15+15=30)
+     9 0000000F A3[1D00]                	mov [num4], ax 		; moving from register to memory (i.e RAM)
+    10 00000012 B8004C                  	mov ax, 0x4c00		; exit from program
+    11 00000015 CD21                    	int 0x21
+    12                                  
+    13                                  ; these are labels or variables
+    14 00000017 0500                    num1: dw  5
+    15 00000019 0A00                    num2: dw  10
+    16 0000001B 0F00                    num3: dw  15
+    17 0000001D 0000                    num4: dw  0
+    18                                  
+    19                                  
