@@ -81,6 +81,12 @@ killall firefox
 kills firefox immediately
 
 ```bash
+hostnamectl
+```
+
+A systemd utility that provides a comprehensive summary of the operating system, kernel version, and architecture.
+
+```bash
 cat /proc/cpuinfo
 ```
 
@@ -126,4 +132,5 @@ keep any command running in the background even if the ssh connection drops from
 ```zsh
 zmv '(*).txt' '$1.js'
 ```
+
 renames all txt file to extension .js ($1 is variable)
